@@ -1,0 +1,86 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$github-pages-primary-palette: mat.define-palette((
+  50: #E6EAFB,
+  100: #C1CBF6,
+  200: #97A9F0,
+  300: #6D86E9,
+  400: #4E6CE5,
+  500: #2F52E0,
+  600: #2A4BDC,
+  700: #2341D8,
+  800: #1D38D3,
+  900: #1228CB,
+  A100: #FAFAFF,
+  A200: #C7CCFF,
+  A400: #949EFF,
+  A700: #7A87FF,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  )
+));
+
+$github-pages-accent-palette: mat.define-palette((
+  50: #E4F5EC,
+  100: #BBE7D0,
+  200: #8ED7B0,
+  300: #61C690,
+  400: #3FBA79,
+  500: #1DAE61,
+  600: #1AA759,
+  700: #159D4F,
+  800: #119445,
+  900: #0A8433,
+  A100: #B3FFC9,
+  A200: #80FFA5,
+  A400: #4DFF80,
+  A700: #34FF6E,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  )
+));
+
+$github-pages-primary: mat.define-palette($github-pages-primary-palette);
+$github-pages-accent: mat.define-palette($github-pages-accent-palette);
+
+$github-pages-typography: mat.define-typography-config(
+  $font-family: 'Roboto',
+);
+
+$github-pages-theme: mat.define-light-theme((
+  color: (
+    primary: $github-pages-primary,
+    accent: $github-pages-accent,
+  ),
+  typography: $github-pages-typography
+));
+
+@include mat.all-component-themes($github-pages-theme);
