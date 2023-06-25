@@ -1,51 +1,53 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { AfterViewInit, Component, ElementRef, ViewChild, inject } from '@angular/core';
+import { CommonModule, Location } from '@angular/common';
+import { Router, RouterOutlet } from '@angular/router';
 import { HomeComponent } from "./pages/home/home.component";
 import { ProjectsComponent } from "./pages/projects/projects.component";
 import { SkillsComponent } from "./pages/skills/skills.component";
 import { ContactComponent } from "./pages/contact/contact.component";
-import { filter } from 'rxjs';
 import { NavComponent } from "./components/nav/nav.component";
 
 @Component({
-    selector: 'app-root',
-    standalone: true,
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
-    imports: [
-        CommonModule,
-        RouterOutlet,
-        HomeComponent,
-        ProjectsComponent,
-        SkillsComponent,
-        ContactComponent,
-        NavComponent
-    ]
+  selector: 'app-root',
+  standalone: true,
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    HomeComponent,
+    ProjectsComponent,
+    SkillsComponent,
+    ContactComponent,
+    NavComponent
+  ]
 })
-export class AppComponent implements OnInit {
-	private router = inject(Router);
-	private activatedRoute = inject(ActivatedRoute);
+export class AppComponent implements AfterViewInit {
+  @ViewChild(HomeComponent, { read: ElementRef }) home: ElementRef<HTMLElement> | undefined;
+  @ViewChild(ProjectsComponent, { read: ElementRef }) projects: ElementRef<HTMLElement> | undefined;
+  @ViewChild(SkillsComponent, { read: ElementRef }) skills: ElementRef<HTMLElement> | undefined;
+  @ViewChild(ContactComponent, { read: ElementRef }) contact: ElementRef<HTMLElement> | undefined;
 
-	ngOnInit(): void {
-		this.router.events
-		.pipe(filter(event => event instanceof NavigationEnd))
-		.subscribe(() => {
-			const rt = this.getChild(this.activatedRoute);
+  private router = inject(Router);
+  private location = inject(Location);
 
-			// rt.fragment.subscribe(fragVal => {
-			// 	if (fragVal) {
-			// 		document.querySelector('#' + fragVal)?.scrollIntoView({ behavior: 'smooth' });
-			// 	}
-			// });
-		});
-	}
+  ngAfterViewInit() {
+    this.initIntersectionObserver();
+  }
 
-	private getChild(activatedRoute: ActivatedRoute): ActivatedRoute {
-		if (activatedRoute.firstChild) {
-      return this.getChild(activatedRoute.firstChild);
-    } else {
-      return activatedRoute;
-    }
-	}
+  private initIntersectionObserver() {
+    const options = { root: null, rootMargin: '0px', threshold: 0.5 };
+    const observer = new IntersectionObserver((entries, observer) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          this.location.replaceState(`#${entry.target.id}`);
+        }
+      }
+    }, options);
+
+    observer.observe(this.home!.nativeElement);
+    observer.observe(this.projects!.nativeElement);
+    observer.observe(this.skills!.nativeElement);
+    observer.observe(this.contact!.nativeElement);
+  }
 }
