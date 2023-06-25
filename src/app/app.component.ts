@@ -1,11 +1,12 @@
 import { AfterViewInit, Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
-import { Router, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from "./pages/home/home.component";
 import { ProjectsComponent } from "./pages/projects/projects.component";
 import { SkillsComponent } from "./pages/skills/skills.component";
 import { ContactComponent } from "./pages/contact/contact.component";
 import { NavComponent } from "./components/nav/nav.component";
+import { NavItem } from './components/nav/nav-item.interface';
 
 @Component({
   selector: 'app-root',
@@ -27,6 +28,13 @@ export class AppComponent implements AfterViewInit {
   @ViewChild(ProjectsComponent, { read: ElementRef }) projects: ElementRef<HTMLElement> | undefined;
   @ViewChild(SkillsComponent, { read: ElementRef }) skills: ElementRef<HTMLElement> | undefined;
   @ViewChild(ContactComponent, { read: ElementRef }) contact: ElementRef<HTMLElement> | undefined;
+
+  public navItems: NavItem[] = [
+    { name: 'Home', fragment: 'home', icon: 'home' },
+    { name: 'Projects', fragment: 'projects', icon: 'work' },
+    { name: 'Skills', fragment: 'skills', icon: 'bolt' },
+    { name: 'Contact', fragment: 'contact', icon: 'contact_page' },
+  ];
 
   private location = inject(Location);
 

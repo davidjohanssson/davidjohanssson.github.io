@@ -1,17 +1,11 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatRippleModule } from '@angular/material/core';
 import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
 import { filter } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
 import { ThemeService } from 'src/app/services/theme/theme.service';
-
-interface NavItem {
-  name: string;
-  fragment: string;
-  icon: string;
-  isSelected?: boolean;
-}
+import { NavItem } from './nav-item.interface';
 
 @Component({
   selector: 'app-nav',
@@ -26,12 +20,7 @@ interface NavItem {
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  public navItems: NavItem[] = [
-    { name: 'Home', fragment: 'home', icon: 'home' },
-    { name: 'Projects', fragment: 'projects', icon: 'work' },
-    { name: 'Skills', fragment: 'skills', icon: 'bolt' },
-    { name: 'Contact', fragment: 'contact', icon: 'contact_page' },
-  ];
+  @Input({ required: true }) items: NavItem[] = []
 
   private router = inject(Router);
   private activatedRoute = inject(ActivatedRoute);
@@ -43,7 +32,7 @@ export class NavComponent implements OnInit {
       .subscribe(() => {
         const fragment = this.activatedRoute.snapshot.fragment;
         if (fragment === null) return;
-        if (this.navItems.map(navItem => navItem.fragment).includes(fragment) === false) return;
+        if (this.items.map(navItem => navItem.fragment).includes(fragment) === false) return;
         const element = document.querySelector('#' + fragment);
         if (element === null) return;
         element.scrollIntoView({ behavior: 'smooth' });
