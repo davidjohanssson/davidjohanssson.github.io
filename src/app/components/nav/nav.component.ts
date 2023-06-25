@@ -4,6 +4,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
 import { filter } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
+import { ThemeService } from 'src/app/services/theme/theme.service';
 
 interface NavItem {
   name: string;
@@ -34,6 +35,7 @@ export class NavComponent implements OnInit {
 
   private router = inject(Router);
   private activatedRoute = inject(ActivatedRoute);
+  public themeService = inject(ThemeService);
 
   ngOnInit() {
     this.router.events
