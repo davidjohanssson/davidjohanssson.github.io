@@ -1,3 +1,4 @@
 <a class="nav-item" matRipple *ngFor="let navItem of navItems" routerLink="" [fragment]="navItem.fragment">
-  <div>{{ navItem.name }}</div>
+  <mat-icon class="material-icons-outlined">{{ navItem.icon }}</mat-icon>
+  <span>{{ navItem.name }}</span>
 </a>

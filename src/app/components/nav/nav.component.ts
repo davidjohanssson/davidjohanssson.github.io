@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatRippleModule } from '@angular/material/core';
 import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
 import { filter } from 'rxjs';
+import { MatIconModule } from '@angular/material/icon';
 
 interface NavItem {
   name: string;
@@ -17,6 +18,7 @@ interface NavItem {
   imports: [
     CommonModule,
     MatRippleModule,
+    MatIconModule,
     RouterModule,
   ],
   templateUrl: './nav.component.html',
@@ -25,8 +27,8 @@ interface NavItem {
 export class NavComponent implements OnInit {
   public navItems: NavItem[] = [
     { name: 'Home', fragment: 'home', icon: 'home' },
-    { name: 'Projects', fragment: 'projects', icon: 'dialogs' },
-    { name: 'Skills', fragment: 'skills', icon: 'tools_power_drill' },
+    { name: 'Projects', fragment: 'projects', icon: 'work' },
+    { name: 'Skills', fragment: 'skills', icon: 'bolt' },
     { name: 'Contact', fragment: 'contact', icon: 'contact_page' },
   ];
 
@@ -44,13 +46,5 @@ export class NavComponent implements OnInit {
         if (element === null) return;
         element.scrollIntoView({ behavior: 'smooth' });
       });
-  }
-
-  private getChild(activatedRoute: ActivatedRoute): ActivatedRoute {
-    if (activatedRoute.firstChild) {
-      return this.getChild(activatedRoute.firstChild);
-    } else {
-      return activatedRoute;
-    }
   }
 }
