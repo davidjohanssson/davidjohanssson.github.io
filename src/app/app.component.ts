@@ -28,7 +28,6 @@ export class AppComponent implements AfterViewInit {
   @ViewChild(SkillsComponent, { read: ElementRef }) skills: ElementRef<HTMLElement> | undefined;
   @ViewChild(ContactComponent, { read: ElementRef }) contact: ElementRef<HTMLElement> | undefined;
 
-  private router = inject(Router);
   private location = inject(Location);
 
   ngAfterViewInit() {
