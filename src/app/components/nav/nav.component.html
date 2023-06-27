@@ -1,4 +1,5 @@
-<a [style.color]="themeService.PRIMARY_500" matRipple class="nav-item" *ngFor="let item of items" routerLink="" [fragment]="item.fragment">
+<a class="nav-item" #navItems [style.color]="themeService.PRIMARY_500" matRipple *ngFor="let item of items" routerLink="" [fragment]="item.fragment">
   <mat-icon class="material-icons-outlined">{{ item.icon }}</mat-icon>
   <span>{{ item.name }}</span>
+  <div class="nav-item-indicator"></div>
 </a>

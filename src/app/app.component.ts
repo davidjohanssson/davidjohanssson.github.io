@@ -37,10 +37,10 @@ export class AppComponent implements AfterViewInit {
   ];
 
   private location = inject(Location);
+  public fragment = '';
 
   ngAfterViewInit() {
     this.initIntersectionObserver();
-    document.addEventListener('scroll', this.handleScroll.bind(this));
   }
 
   private initIntersectionObserver() {
@@ -49,6 +49,7 @@ export class AppComponent implements AfterViewInit {
       for (const entry of entries) {
         if (entry.isIntersecting) {
           this.location.replaceState(`#${entry.target.id}`);
+          this.fragment = entry.target.id;
         }
       }
     }, options);
@@ -57,16 +58,5 @@ export class AppComponent implements AfterViewInit {
     observer.observe(this.projects!.nativeElement);
     observer.observe(this.skills!.nativeElement);
     observer.observe(this.contact!.nativeElement);
-  }
-
-  private handleScroll() {
-    const element = document.scrollingElement as HTMLElement;
-    const scrollTop = element.scrollTop;
-    const scrollHeight = element.scrollHeight;
-    const clientHeight = element.clientHeight;
-
-    const scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
-
-    console.log(scrollPercentage);
   }
 }
