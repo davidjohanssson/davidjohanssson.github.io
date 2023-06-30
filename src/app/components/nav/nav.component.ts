@@ -51,6 +51,12 @@ export class NavComponent implements OnInit, OnChanges {
     }
   }
 
+  public scrollIntoView(fragment: string) {
+    const element = document.querySelector('#' + fragment);
+    if (element === null) return;
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+
   private animateNavItemIndicator() {
     if (this.navItems === undefined) return;
 
@@ -70,7 +76,6 @@ export class NavComponent implements OnInit, OnChanges {
         ], { duration: animationDuration, fill: 'forwards' });
 
       } else if (navItem.nativeElement.hash.substring(1) === this.currentFragment) {
-
         navItemIndicator.animate([
           { transform: 'scaleX(0)', opacity: 0 },
           { transform: 'scaleX(1)', opacity: 1 }
