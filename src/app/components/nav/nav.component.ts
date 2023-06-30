@@ -54,7 +54,7 @@ export class NavComponent implements OnInit, OnChanges {
   private animateNavItemIndicator() {
     if (this.navItems === undefined) return;
 
-    const animationDuration = 250;
+    const animationDuration = 500;
 
     for (const navItem of this.navItems) {
       const navItemIndicator = navItem.nativeElement.getElementsByClassName('nav-item-indicator')[0] as HTMLDivElement;
