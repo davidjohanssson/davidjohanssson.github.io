@@ -72,7 +72,7 @@ $github-pages-primary: mat.define-palette($github-pages-primary-palette);
 $github-pages-accent: mat.define-palette($github-pages-accent-palette);
 
 $github-pages-typography: mat.define-typography-config(
-  $font-family: 'Poppins',
+  $font-family: 'Inter',
 );
 
 $github-pages-theme: mat.define-light-theme((
