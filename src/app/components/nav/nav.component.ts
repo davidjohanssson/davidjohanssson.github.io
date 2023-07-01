@@ -54,7 +54,7 @@ export class NavComponent implements OnInit, OnChanges {
   public scrollIntoView(fragment: string) {
     const element = document.querySelector('#' + fragment);
     if (element === null) return;
-    element.scrollIntoView({ behavior: 'smooth' });
+    element.scrollIntoView();
   }
 
   private animateNavItemIndicator() {
