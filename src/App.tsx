@@ -1,7 +1,9 @@
-import { Box, Tab, Tabs, ThemeProvider, createTheme } from '@mui/material';
+import { Box, Paper, Tab, Tabs, ThemeProvider, createTheme } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 import Home from './components/Home';
 import Projects from './components/Projects';
+import Skills from './components/Skills';
+import Contact from './components/Contact';
 
 const theme = createTheme({
   typography: {
@@ -10,7 +12,7 @@ const theme = createTheme({
 });
 
 interface Section {
-  name: string;
+  name: 'Home' | 'Projects' | 'Skills' | 'Contact';
   ref: HTMLDivElement | null;
 }
 
@@ -18,7 +20,9 @@ function App() {
   const [sectionIndex, setSectionIndex] = useState(0);
   const sections = useRef<Section[]>([
     { name: 'Home', ref: null },
-    { name: 'Projects', ref: null }
+    { name: 'Projects', ref: null },
+    { name: 'Skills', ref: null },
+    { name: 'Contact', ref: null },
   ]);
 
   useEffect(() => {
@@ -53,11 +57,15 @@ function App() {
             return <Home key={section.name} id={section.name} ref={(ref) => sections.current[index].ref = ref} />
           } else if (section.name === 'Projects') {
             return <Projects key={section.name} id={section.name} ref={(ref) => sections.current[index].ref = ref} />
+          } else if (section.name === 'Skills') {
+            return <Skills key={section.name} id={section.name} ref={(ref) => sections.current[index].ref = ref} />
+          } else if (section.name === 'Contact') {
+            return <Contact key={section.name} id={section.name} ref={(ref) => sections.current[index].ref = ref} />
           } else {
             return (<div>404 Not Found</div>);
           }
         })}
-        <Box sx={{
+        <Paper elevation={8} sx={{
           backgroundColor: 'white',
           position: 'fixed',
           width: 'calc(100% - 32px)',
@@ -67,6 +75,8 @@ function App() {
           alignItems: 'center',
           borderTopLeftRadius: '4px',
           borderTopRightRadius: '4px',
+          borderBottomLeftRadius: '0px',
+          borderBottomRightRadius: '0px',
           overflow: 'hidden',
           bottom: '0px',
         }}>
@@ -75,7 +85,7 @@ function App() {
               <Tab key={section.name} label={section.name} onClick={() => handleClick(section, index)} />
             ))}
           </Tabs>
-        </Box>
+        </Paper>
       </Box>
     </ThemeProvider>
   );
