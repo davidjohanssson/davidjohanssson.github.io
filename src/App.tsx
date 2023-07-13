@@ -1,7 +1,13 @@
-import { Box, Tab, Tabs } from '@mui/material';
+import { Box, Tab, Tabs, ThemeProvider, createTheme } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 import Home from './components/Home';
 import Projects from './components/Projects';
+
+const theme = createTheme({
+  typography: {
+    fontFamily: 'Inter, sans-serif',
+  },
+});
 
 interface Section {
   name: string;
@@ -40,36 +46,38 @@ function App() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', position: 'relative', alignItems: 'center' }}>
-      {sections.current.map((section, index) => {
-        if (section.name === 'Home') {
-          return <Home key={section.name} id={section.name} ref={(ref) => sections.current[index].ref = ref} />
-        } else if (section.name === 'Projects') {
-          return <Projects key={section.name} id={section.name} ref={(ref) => sections.current[index].ref = ref} />
-        } else {
-          return (<div>404 Not Found</div>);
-        }
-      })}
-      <Box sx={{
-        backgroundColor: 'white',
-        position: 'fixed',
-        width: 'calc(100% - 32px)',
-        maxWidth: 'calc(256px + 128px)',
-        display: 'flex',
-        justifyContent: 'space-evenly',
-        alignItems: 'center',
-        borderTopLeftRadius: '4px',
-        borderTopRightRadius: '4px',
-        overflow: 'hidden',
-        bottom: '0px',
-      }}>
-        <Tabs value={sectionIndex} sx={{ width: '100%' }} variant='fullWidth'>
-          {sections.current.map((section, index) => (
-            <Tab key={section.name} label={section.name} onClick={() => handleClick(section, index)} />
-          ))}
-        </Tabs>
+    <ThemeProvider theme={theme}>
+      <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', position: 'relative', alignItems: 'center' }}>
+        {sections.current.map((section, index) => {
+          if (section.name === 'Home') {
+            return <Home key={section.name} id={section.name} ref={(ref) => sections.current[index].ref = ref} />
+          } else if (section.name === 'Projects') {
+            return <Projects key={section.name} id={section.name} ref={(ref) => sections.current[index].ref = ref} />
+          } else {
+            return (<div>404 Not Found</div>);
+          }
+        })}
+        <Box sx={{
+          backgroundColor: 'white',
+          position: 'fixed',
+          width: 'calc(100% - 32px)',
+          maxWidth: 'calc(256px + 128px)',
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          alignItems: 'center',
+          borderTopLeftRadius: '4px',
+          borderTopRightRadius: '4px',
+          overflow: 'hidden',
+          bottom: '0px',
+        }}>
+          <Tabs value={sectionIndex} sx={{ width: '100%' }} variant='fullWidth'>
+            {sections.current.map((section, index) => (
+              <Tab key={section.name} label={section.name} onClick={() => handleClick(section, index)} />
+            ))}
+          </Tabs>
+        </Box>
       </Box>
-    </Box>
+    </ThemeProvider>
   );
 }
 
