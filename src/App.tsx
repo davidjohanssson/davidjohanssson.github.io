@@ -1,15 +1,10 @@
-import { Box, Paper, Tab, Tabs, ThemeProvider, createTheme } from '@mui/material';
+import { Box, Paper, Tab, Tabs, ThemeProvider } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 import Home from './components/Home';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
-
-const theme = createTheme({
-  typography: {
-    fontFamily: 'Inter, sans-serif',
-  },
-});
+import { theme } from './theme';
 
 interface Section {
   name: 'Home' | 'Projects' | 'Skills' | 'Contact';
@@ -86,10 +81,17 @@ function App() {
           }
         })}
         <Paper elevation={8} sx={{
-          backgroundColor: 'white',
+          backgroundColor: theme.palette.primary.main,
+          color: 'white',
           position: 'fixed',
-          width: 'calc(100% - 32px)',
-          maxWidth: 'calc(256px + 128px)',
+          width: {
+            xs: '100%',
+            sm: 'calc(100% - 32px)'
+          },
+          maxWidth: {
+            xs: 'unset',
+            sm: 'calc(256px + 128px)'
+          },
           display: 'flex',
           justifyContent: 'space-evenly',
           alignItems: 'center',
@@ -100,7 +102,12 @@ function App() {
           overflow: 'hidden',
           bottom: '0px',
         }}>
-          <Tabs value={sectionIndex} sx={{ width: '100%' }} variant='fullWidth'>
+          <Tabs value={sectionIndex} variant='fullWidth' textColor='inherit' sx={{
+            width: '100%',
+            '& .MuiTabs-indicator': {
+              backgroundColor: 'white',
+            },
+          }}>
             {sections.current.map((section, index) => (
               <Tab key={section.name} label={section.name} onClick={() => handleClick(section, index)} />
             ))}
