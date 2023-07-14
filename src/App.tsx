@@ -86,17 +86,23 @@ function App() {
           position: 'fixed',
           width: {
             xs: '100%',
-            sm: 'calc(100% - 32px)'
+            sm: 'calc(100% - 32px)',
           },
           maxWidth: {
             xs: 'unset',
-            sm: 'calc(256px + 128px)'
+            sm: 'calc(256px + 128px)',
           },
           display: 'flex',
           justifyContent: 'space-evenly',
           alignItems: 'center',
-          borderTopLeftRadius: '4px',
-          borderTopRightRadius: '4px',
+          borderTopLeftRadius: {
+            xs: '0px',
+            sm: '4px',
+          },
+          borderTopRightRadius: {
+            xs: '0px',
+            sm: '4px',
+          },
           borderBottomLeftRadius: '0px',
           borderBottomRightRadius: '0px',
           overflow: 'hidden',
