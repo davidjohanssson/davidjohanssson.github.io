@@ -1,13 +1,13 @@
 import { Box, Paper, Tab, Tabs, ThemeProvider } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 import Home from './components/Home';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
+import Knowledge from './components/Knowledge';
+import Explore from './components/Explore';
 import Contact from './components/Contact';
 import { theme } from './theme';
 
 interface Section {
-  name: 'Home' | 'Projects' | 'Skills' | 'Contact';
+  name: 'Home' | 'Explore' | 'Knowledge' | 'Contact';
   ref: HTMLDivElement | null;
 }
 
@@ -15,8 +15,8 @@ function App() {
   const [sectionIndex, setSectionIndex] = useState(0);
   const sections = useRef<Section[]>([
     { name: 'Home', ref: null },
-    { name: 'Projects', ref: null },
-    { name: 'Skills', ref: null },
+    { name: 'Knowledge', ref: null },
+    { name: 'Explore', ref: null },
     { name: 'Contact', ref: null },
   ]);
 
@@ -70,10 +70,10 @@ function App() {
         {sections.current.map((section, index) => {
           if (section.name === 'Home') {
             return <Home key={section.name} id={section.name} ref={(ref) => sections.current[index].ref = ref} />
-          } else if (section.name === 'Projects') {
-            return <Projects key={section.name} id={section.name} ref={(ref) => sections.current[index].ref = ref} />
-          } else if (section.name === 'Skills') {
-            return <Skills key={section.name} id={section.name} ref={(ref) => sections.current[index].ref = ref} />
+          } else if (section.name === 'Knowledge') {
+            return <Knowledge key={section.name} id={section.name} ref={(ref) => sections.current[index].ref = ref} />
+          } else if (section.name === 'Explore') {
+            return <Explore key={section.name} id={section.name} ref={(ref) => sections.current[index].ref = ref} />
           } else if (section.name === 'Contact') {
             return <Contact key={section.name} id={section.name} ref={(ref) => sections.current[index].ref = ref} />
           } else {
