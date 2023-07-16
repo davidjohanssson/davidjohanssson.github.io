@@ -80,7 +80,7 @@ function App() {
             return (<div>404 Not Found</div>);
           }
         })}
-        <Paper elevation={8} sx={{
+        <Paper elevation={6} sx={{
           backgroundColor: theme.palette.primary.main,
           color: 'white',
           position: 'fixed',
