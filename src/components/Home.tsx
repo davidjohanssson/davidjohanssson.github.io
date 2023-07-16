@@ -26,8 +26,14 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        boxSizing: 'border-box',
-        padding: '32px',
+        margin: {
+          xs: '32px',
+          md: '64px',
+        },
+        height: {
+          xs: '50%',
+          md: 'unset',
+        },
       }}>
         LEFT
       </Box>
@@ -36,6 +42,10 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        height: {
+          xs: '50%',
+          md: 'unset',
+        },
         maxWidth: {
           xs: 'unset',
           md: 'calc(100vw / 2)',
@@ -44,8 +54,16 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
           xs: 'calc(100vh / 2)',
           md: 'unset',
         },
+        background: `linear-gradient(to bottom right, ${theme.palette.primary.main}, ${theme.palette.primary.light})`,
+        margin: {
+          xs: '32px',
+          md: '64px',
+        },
+        borderRadius: '16px',
+        position: 'relative',
       }}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" version="1.1" style={{
+          position: 'absolute',
           marginLeft: '24px',
           width: '100%',
           height: '100%'
