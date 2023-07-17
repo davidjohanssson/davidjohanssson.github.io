@@ -39,7 +39,31 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
           Hello.
         </div>
       </Box>
-      <div>BOX 2</div>
+      <Box sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        boxSizing: 'border-box',
+        rowGap: '4px',
+        padding: '32px',
+        maxWidth: '100%',
+        maxHeight: '100%',
+        overflow: 'hidden',
+      }}>
+        <Box sx={{
+          maxWidth: '100%',
+          maxHeight: '100%',
+          overflow: 'hidden',
+        }}>
+          <img src='/images/IMG_0456.jpg' alt='me' style={{
+            borderRadius: '16px',
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain',
+          }} />
+        </Box>
+        <i>Me</i>
+      </Box>
       <Box sx={{
         display: 'flex',
         flexDirection: 'column',
