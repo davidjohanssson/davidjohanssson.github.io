@@ -11,19 +11,14 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   return (
     <Box id={props.id} ref={ref} sx={{
       width: '100%',
-      height: {
-        xs: 'calc(100vh - 48px)',
-        sm: '100vh'
-      },
       display: 'flex',
       justifyContent: 'center',
     }}>
       <Box sx={{
         flexGrow: '1',
         maxWidth: '960px',
-        height: 'calc(100vh - 48px)',
         display: 'grid',
-        gridTemplateRows: '1fr min-content 2fr'
+        gridTemplateRows: '192px min-content 348px'
       }}>
         <Box sx={{
           boxSizing: 'border-box',
