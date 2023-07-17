@@ -20,6 +20,7 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         xs: 'column-reverse',
         md: 'row',
       },
+      backgroundColor: 'white',
     }}>
       <Box sx={{
         flexGrow: '1',

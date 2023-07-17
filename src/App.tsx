@@ -62,7 +62,18 @@ function App() {
 
   const handleClick = (section: Section, index: number) => {
     setSectionIndex(index);
-    section.ref?.scrollIntoView();
+
+    if (section.ref) {
+      section.ref.scrollIntoView();
+
+      let color = window.getComputedStyle(section.ref).backgroundColor;
+
+      if (color === 'rgba(0, 0, 0, 0)') {
+        color = 'rgb(255, 255, 255)';
+      }
+
+      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', color);
+    }
   };
 
   return (
