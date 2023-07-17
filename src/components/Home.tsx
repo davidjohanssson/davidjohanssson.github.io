@@ -27,14 +27,35 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
       }}>
         <Box sx={{
           boxSizing: 'border-box',
-          padding: '16px 32px',
+          paddingTop: {
+            xs: '16px',
+            sm: '32px',
+          },
+          paddingBottom: {
+            xs: '8px',
+            sm: '16px',
+          },
+          paddingLeft: {
+            xs: '16px',
+            sm: '32px',
+          },
+          paddingRight: {
+            xs: '16px',
+            sm: '32px',
+          },
           position: 'relative',
         }}>
           <Shape />
           <Box sx={{
             position: 'absolute',
-            top: 64,
-            left: 64,
+            top: {
+              xs: '32px',
+              sm: '64px',
+            },
+            left: {
+              xs: '32px',
+              sm: '64px',
+            },
             fontSize: '32px',
             fontWeight: 'bold',
             color: 'white',
@@ -44,14 +65,36 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         </Box>
         <Box sx={{
           boxSizing: 'border-box',
-          padding: '16px 32px',
+          paddingTop: {
+            xs: '8px',
+            sm: '16px',
+          },
+          paddingBottom: {
+            xs: '8px',
+            sm: '16px',
+          },
+          paddingLeft: {
+            xs: '16px',
+            sm: '32px',
+          },
+          paddingRight: {
+            xs: '16px',
+            sm: '32px',
+          },
           display: 'flex',
           flexDirection: 'column'
         }}>
           <Box sx={{
             flexGrow: '1',
             boxSizing: 'border-box',
-            padding: '0px 32px',
+            paddingLeft: {
+              xs: '16px',
+              sm: '32px',
+            },
+            paddingRight: {
+              xs: '16px',
+              sm: '32px',
+            },
           }}>
             <h1>My name is David Johansson.</h1>
             <h1>I'm a full stack web developer based in Malmö, Sweden.</h1>
@@ -59,7 +102,22 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         </Box>
         <Box sx={{
           boxSizing: 'border-box',
-          padding: '16px 32px',
+          paddingTop: {
+            xs: '8px',
+            sm: '16px',
+          },
+          paddingBottom: {
+            xs: '16px',
+            sm: '32px',
+          },
+          paddingLeft: {
+            xs: '16px',
+            sm: '32px',
+          },
+          paddingRight: {
+            xs: '16px',
+            sm: '32px',
+          },
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
