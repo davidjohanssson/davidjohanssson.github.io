@@ -3,11 +3,10 @@ import { useEffect, useRef, useState } from 'react';
 import Home from './components/Home';
 import Skills from './components/Skills';
 import Explore from './components/Explore';
-import Contact from './components/Contact';
 import { theme } from './theme';
 
 interface Section {
-  name: 'Home' | 'Skills' | 'Explore' | 'Contact';
+  name: 'Home' | 'Skills' | 'Explore';
   ref: HTMLDivElement | null;
 }
 
@@ -17,7 +16,6 @@ function App() {
     { name: 'Home', ref: null },
     { name: 'Skills', ref: null },
     { name: 'Explore', ref: null },
-    { name: 'Contact', ref: null },
   ]);
 
   useEffect(() => {
@@ -86,8 +84,6 @@ function App() {
             return <Skills key={section.name} id={section.name} ref={(ref) => sections.current[index].ref = ref} />
           } else if (section.name === 'Explore') {
             return <Explore key={section.name} id={section.name} ref={(ref) => sections.current[index].ref = ref} />
-          } else if (section.name === 'Contact') {
-            return <Contact key={section.name} id={section.name} ref={(ref) => sections.current[index].ref = ref} />
           } else {
             return (<div>404 Not Found</div>);
           }
