@@ -12,8 +12,6 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   const [orientation, setOrientation] = useState<'landscape' | 'portrait'>(window.innerWidth > window.innerHeight ? 'landscape' : 'portrait');
   const buttonStyle = {
     width: '300px',
-    // backgroundColor: 'white',
-    // color: theme.palette.primary.main,
     textTransform: 'none',
     display: 'grid',
     gridTemplateColumns: '24px 1fr 24px',
