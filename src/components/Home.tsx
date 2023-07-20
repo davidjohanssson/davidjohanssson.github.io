@@ -1,6 +1,6 @@
 import { Call, Mail } from '@mui/icons-material';
-import { Box, Button, useMediaQuery, useTheme } from '@mui/material';
-import React, { useEffect, useMemo, useState } from 'react';
+import { Box, Button, useTheme } from '@mui/material';
+import React, { useEffect, useState } from 'react';
 
 interface Props {
   id: string;
@@ -43,8 +43,31 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         xs: `calc(${viewportHeight}px - 48px)`,
         sm: `${viewportHeight}px`,
       },
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
     }}>
-
+      <img src='/images/me.jpg' alt='me' style={{
+        width: '128px',
+        height: '128px',
+        objectFit: 'cover',
+        border: '3px solid white',
+        borderRadius: '50%',
+      }} />
+      <Box sx={{
+        color: 'white',
+        fontFamily: 'Pacifico, sans-serif',
+        fontSize: '32px',
+      }}>
+        David Johansson
+      </Box>
+      <Box sx={{
+        color: 'white',
+        opacity: '0.8',
+      }}>
+        Web Developer
+      </Box>
     </Box>
   )
 
