@@ -10,6 +10,14 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   const theme = useTheme();
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
   const [orientation, setOrientation] = useState<'landscape' | 'portrait'>(window.innerWidth > window.innerHeight ? 'landscape' : 'portrait');
+  const buttonStyle = {
+    width: '300px',
+    // backgroundColor: 'white',
+    // color: theme.palette.primary.main,
+    textTransform: 'none',
+    display: 'grid',
+    gridTemplateColumns: '24px 1fr 24px',
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -47,201 +55,48 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
       flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
+      rowGap: '32px',
     }}>
-      <img src='/images/me.jpg' alt='me' style={{
-        width: '128px',
-        height: '128px',
-        objectFit: 'cover',
-        border: '3px solid white',
-        borderRadius: '50%',
-      }} />
       <Box sx={{
-        color: 'white',
-        fontFamily: 'Pacifico, sans-serif',
-        fontSize: '32px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
       }}>
-        David Johansson
+        <img src='/images/me.jpg' alt='me' style={{
+          width: '128px',
+          height: '128px',
+          objectFit: 'cover',
+          border: '3px solid white',
+          borderRadius: '50%',
+        }} />
+        <Box sx={{
+          color: 'white',
+          fontFamily: 'Pacifico, sans-serif',
+          fontSize: '32px',
+        }}>
+          David Johansson
+        </Box>
+        <Box sx={{
+          color: 'white',
+          opacity: '0.8',
+        }}>
+          Web Developer
+        </Box>
       </Box>
-      <Box sx={{
-        color: 'white',
-        opacity: '0.8',
-      }}>
-        Web Developer
+      <Box sx={{ display: 'flex', flexDirection: 'column', rowGap: '16px' }}>
+        <Button href="tel:+46793344591" variant='contained' sx={buttonStyle}>
+          <Call />
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>+46 79 33 44 591</Box>
+          <Box></Box>
+        </Button>
+        <Button href="mailto:david.n.johansson@live.com" variant='contained' sx={buttonStyle}>
+          <Mail />
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>david.n.johansson@live.com</Box>
+          <Box></Box>
+        </Button>
       </Box>
     </Box>
   )
-
-  // const theme = useTheme();
-  // const isLandscape = useMediaQuery(`(orientation: landscape)`);
-  // const buttonStyle = { backgroundColor: 'white', color: theme.palette.primary.main, width: '100%' };
-
-  // return (
-  //   <Box id={props.id} ref={ref} sx={{
-  //     backgroundColor: `${theme.palette.primary.main}`,
-  //     width: '100%',
-  //     height: {
-  //       xs: 'calc(100vh - 48px)',
-  //       sm: '100vh',
-  //     },
-  //     display: 'grid',
-  //     gridTemplateColumns: isLandscape ? '1fr 1fr' : '1fr',
-  //     gridTemplateRows: isLandscape ? '1fr' : '1fr 1fr',
-  //   }}>
-  //     <Box sx={{
-  //       display: 'flex',
-  //       alignItems: isLandscape ? 'flex-end' : 'center',
-  //       justifyContent: isLandscape ? 'center' : 'flex-end',
-  //       flexDirection: 'column',
-  //     }}>
-  //       <div>David Johansson</div>
-  //       <div>Full Stack Web Developer</div>
-  //     </Box>
-  //     <Box sx={{
-  //       display: 'flex',
-  //       alignItems: isLandscape ? 'flex-start' : 'center',
-  //       justifyContent: isLandscape ? 'center' : 'flex-start',
-  //       flexDirection: 'column',
-  //     }}>
-  //       <Button href="tel:+46793344591" style={buttonStyle} startIcon={<Call />}>
-  //         +46 79 33 44 591
-  //       </Button>
-  //       <Button href="mailto:david.n.johansson@live.com" style={buttonStyle} startIcon={<Mail />}>
-  //         DAVID.N.JOHANSSON@LIVE.COM
-  //       </Button>
-  //     </Box>
-  //   </Box>
-  // )
-
-  // return (
-  //   <Box id={props.id} ref={ref} sx={{
-  //     width: '100%',
-  //     display: 'flex',
-  //     justifyContent: 'center',
-  //   }}>
-  //     <Box sx={{
-  //       flexGrow: '1',
-  //       maxWidth: '960px',
-  //       display: 'grid',
-  //       gridTemplateRows: '192px min-content 348px'
-  //     }}>
-  //       <Box sx={{
-  //         boxSizing: 'border-box',
-  //         paddingTop: {
-  //           xs: '16px',
-  //           sm: '32px',
-  //         },
-  //         paddingBottom: {
-  //           xs: '8px',
-  //           sm: '16px',
-  //         },
-  //         paddingLeft: {
-  //           xs: '16px',
-  //           sm: '32px',
-  //         },
-  //         paddingRight: {
-  //           xs: '16px',
-  //           sm: '32px',
-  //         },
-  //         position: 'relative',
-  //       }}>
-  //         <Shape />
-  //         <Box sx={{
-  //           position: 'absolute',
-  //           top: {
-  //             xs: '32px',
-  //             sm: '64px',
-  //           },
-  //           left: {
-  //             xs: '32px',
-  //             sm: '64px',
-  //           },
-  //           fontSize: '32px',
-  //           fontWeight: 'bold',
-  //           color: 'white',
-  //         }}>
-  //           Hello.
-  //         </Box>
-  //       </Box>
-  //       <Box sx={{
-  //         boxSizing: 'border-box',
-  //         paddingTop: {
-  //           xs: '8px',
-  //           sm: '16px',
-  //         },
-  //         paddingBottom: {
-  //           xs: '8px',
-  //           sm: '16px',
-  //         },
-  //         paddingLeft: {
-  //           xs: '16px',
-  //           sm: '32px',
-  //         },
-  //         paddingRight: {
-  //           xs: '16px',
-  //           sm: '32px',
-  //         },
-  //         display: 'flex',
-  //         flexDirection: 'column'
-  //       }}>
-  //         <Box sx={{
-  //           flexGrow: '1',
-  //           boxSizing: 'border-box',
-  //           paddingLeft: {
-  //             xs: '16px',
-  //             sm: '32px',
-  //           },
-  //           paddingRight: {
-  //             xs: '16px',
-  //             sm: '32px',
-  //           },
-  //         }}>
-  //           <h1>My name is David Johansson.</h1>
-  //           <h1>I'm a full stack web developer based in Malmö, Sweden.</h1>
-  //         </Box>
-  //       </Box>
-  //       <Box sx={{
-  //         boxSizing: 'border-box',
-  //         paddingTop: {
-  //           xs: '8px',
-  //           sm: '16px',
-  //         },
-  //         paddingBottom: {
-  //           xs: '16px',
-  //           sm: '32px',
-  //         },
-  //         paddingLeft: {
-  //           xs: '16px',
-  //           sm: '32px',
-  //         },
-  //         paddingRight: {
-  //           xs: '16px',
-  //           sm: '32px',
-  //         },
-  //         display: 'flex',
-  //         flexDirection: 'column',
-  //         alignItems: 'center',
-  //         rowGap: '2px',
-  //         maxWidth: '100%',
-  //         maxHeight: '100%',
-  //         overflow: 'hidden',
-  //       }}>
-  //         <Box sx={{
-  //           maxWidth: '100%',
-  //           maxHeight: '100%',
-  //           overflow: 'hidden',
-  //         }}>
-  //           <img src='/images/me.jpg' alt='me' style={{
-  //             borderRadius: '16px',
-  //             width: '100%',
-  //             height: '100%',
-  //             objectFit: 'contain',
-  //           }} />
-  //         </Box>
-  //         <i>Me</i>
-  //       </Box>
-  //     </Box>
-  //   </Box>
-  // )
 });
 
 export default Home;
