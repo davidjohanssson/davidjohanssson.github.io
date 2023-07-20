@@ -1,23 +1,31 @@
 {
   "files": {
-    "main.css": "/static/css/main.cf16a2d1.css",
-    "main.js": "/static/js/main.b437eb4a.js",
+    "main.css": "/static/css/main.8c325582.css",
+    "main.js": "/static/js/main.b145f0bd.js",
     "static/media/inter-latin-ext-700-normal.woff": "/static/media/inter-latin-ext-700-normal.1a4eb8333220ffec1b2d.woff",
     "static/media/inter-latin-ext-500-normal.woff": "/static/media/inter-latin-ext-500-normal.084aa2381d74c9c49610.woff",
     "static/media/inter-latin-ext-300-normal.woff": "/static/media/inter-latin-ext-300-normal.e31a50ab2f5896111ffa.woff",
+    "static/media/pacifico-latin-400-normal.woff2": "/static/media/pacifico-latin-400-normal.f36bb0347eecd87d78af.woff2",
     "static/media/inter-latin-ext-400-normal.woff": "/static/media/inter-latin-ext-400-normal.3ccf133441ba225afa51.woff",
+    "static/media/pacifico-latin-ext-400-normal.woff2": "/static/media/pacifico-latin-ext-400-normal.e12a2413eb43b100497c.woff2",
+    "static/media/pacifico-cyrillic-ext-400-normal.woff2": "/static/media/pacifico-cyrillic-ext-400-normal.682f9fb5d72ef074686d.woff2",
+    "static/media/pacifico-latin-400-normal.woff": "/static/media/pacifico-latin-400-normal.14d6c552098c08b689a8.woff",
+    "static/media/pacifico-latin-ext-400-normal.woff": "/static/media/pacifico-latin-ext-400-normal.a23c1ef38ba6c6d9d725.woff",
     "static/media/inter-latin-700-normal.woff": "/static/media/inter-latin-700-normal.6d95ba525c9d7b725600.woff",
     "static/media/inter-latin-500-normal.woff": "/static/media/inter-latin-500-normal.d6b36fd8bebd5ec8d693.woff",
     "static/media/inter-latin-300-normal.woff": "/static/media/inter-latin-300-normal.ed8de9576d0f618843c5.woff",
     "static/media/inter-latin-ext-700-normal.woff2": "/static/media/inter-latin-ext-700-normal.8e5621b2012f373fe96e.woff2",
+    "static/media/pacifico-cyrillic-400-normal.woff2": "/static/media/pacifico-cyrillic-400-normal.12b0288f7a1df3155d42.woff2",
     "static/media/inter-latin-ext-500-normal.woff2": "/static/media/inter-latin-ext-500-normal.cd2491c30c7f25218ecd.woff2",
     "static/media/inter-latin-400-normal.woff": "/static/media/inter-latin-400-normal.662f290710a57b8dfbbd.woff",
     "static/media/inter-latin-ext-300-normal.woff2": "/static/media/inter-latin-ext-300-normal.9d00aad461d0a2a6a18a.woff2",
+    "static/media/pacifico-cyrillic-ext-400-normal.woff": "/static/media/pacifico-cyrillic-ext-400-normal.846fa4697d95af9f681d.woff",
     "static/media/inter-latin-ext-400-normal.woff2": "/static/media/inter-latin-ext-400-normal.3a7a76525d98d25962eb.woff2",
     "static/media/inter-latin-700-normal.woff2": "/static/media/inter-latin-700-normal.54321e26b8bf4739a16d.woff2",
     "static/media/inter-latin-500-normal.woff2": "/static/media/inter-latin-500-normal.c72c72b70c82b1f4bacf.woff2",
     "static/media/inter-latin-300-normal.woff2": "/static/media/inter-latin-300-normal.1d901654d5968b3d2af1.woff2",
     "static/media/inter-latin-400-normal.woff2": "/static/media/inter-latin-400-normal.be7cb18dc7caf47cf7e9.woff2",
+    "static/media/pacifico-cyrillic-400-normal.woff": "/static/media/pacifico-cyrillic-400-normal.62a6feffdc768e3f6e65.woff",
     "static/media/inter-cyrillic-ext-700-normal.woff": "/static/media/inter-cyrillic-ext-700-normal.9e141b251a1e8e7d407d.woff",
     "static/media/inter-cyrillic-ext-500-normal.woff": "/static/media/inter-cyrillic-ext-500-normal.a958cd9cefde0c860f31.woff",
     "static/media/inter-cyrillic-ext-300-normal.woff": "/static/media/inter-cyrillic-ext-300-normal.e67be1d284a829eeebb1.woff",
@@ -26,6 +34,7 @@
     "static/media/inter-greek-500-normal.woff": "/static/media/inter-greek-500-normal.00f6278854fa806bec8d.woff",
     "static/media/inter-greek-300-normal.woff": "/static/media/inter-greek-300-normal.ab953f93cf5fb715a981.woff",
     "static/media/inter-greek-400-normal.woff": "/static/media/inter-greek-400-normal.b31b8612d0c0c50eb73b.woff",
+    "static/media/pacifico-vietnamese-400-normal.woff2": "/static/media/pacifico-vietnamese-400-normal.bd5387ce81f7c383a0a3.woff2",
     "static/media/inter-cyrillic-ext-700-normal.woff2": "/static/media/inter-cyrillic-ext-700-normal.177b82cdf603287fdd19.woff2",
     "static/media/inter-cyrillic-ext-500-normal.woff2": "/static/media/inter-cyrillic-ext-500-normal.a93857ed8d0b316d3572.woff2",
     "static/media/inter-cyrillic-ext-300-normal.woff2": "/static/media/inter-cyrillic-ext-300-normal.0a639881a315fb42219c.woff2",
@@ -38,6 +47,7 @@
     "static/media/inter-greek-500-normal.woff2": "/static/media/inter-greek-500-normal.4403838c26aa2155eb84.woff2",
     "static/media/inter-greek-300-normal.woff2": "/static/media/inter-greek-300-normal.88564212d2f720589a8b.woff2",
     "static/media/inter-greek-400-normal.woff2": "/static/media/inter-greek-400-normal.0278a49f9007106a0bf4.woff2",
+    "static/media/pacifico-vietnamese-400-normal.woff": "/static/media/pacifico-vietnamese-400-normal.e0ad65c3d90312b0416e.woff",
     "static/media/inter-greek-ext-300-normal.woff": "/static/media/inter-greek-ext-300-normal.6f0c251f8f6b3123634e.woff",
     "static/media/inter-greek-ext-700-normal.woff": "/static/media/inter-greek-ext-700-normal.0ead4914938d6e64414c.woff",
     "static/media/inter-greek-ext-500-normal.woff": "/static/media/inter-greek-ext-500-normal.f901c410fa70dab81973.woff",
@@ -59,11 +69,11 @@
     "static/media/inter-vietnamese-300-normal.woff2": "/static/media/inter-vietnamese-300-normal.458d9adac2ed71ea3a8d.woff2",
     "static/media/inter-vietnamese-400-normal.woff2": "/static/media/inter-vietnamese-400-normal.789afb71d327988e2fc8.woff2",
     "index.html": "/index.html",
-    "main.cf16a2d1.css.map": "/static/css/main.cf16a2d1.css.map",
-    "main.b437eb4a.js.map": "/static/js/main.b437eb4a.js.map"
+    "main.8c325582.css.map": "/static/css/main.8c325582.css.map",
+    "main.b145f0bd.js.map": "/static/js/main.b145f0bd.js.map"
   },
   "entrypoints": [
-    "static/css/main.cf16a2d1.css",
-    "static/js/main.b437eb4a.js"
+    "static/css/main.8c325582.css",
+    "static/js/main.b145f0bd.js"
   ]
 }

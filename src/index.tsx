@@ -6,6 +6,7 @@ import '@fontsource/inter/300.css';
 import '@fontsource/inter/400.css';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/700.css';
+import '@fontsource/pacifico/400.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
