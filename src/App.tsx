@@ -4,37 +4,36 @@ import Home from './components/Home';
 import Skills from './components/Skills';
 import Explore from './components/Explore';
 import { theme } from './theme';
+import { useVisibleSection } from './hooks/useVisibleSection';
 
 interface Section {
-  name: 'Home' | 'Skills' | 'Explore';
+  id: 'Home' | 'Skills' | 'Explore';
   ref: HTMLDivElement | null;
 }
 
 function App() {
   const [sectionIndex, setSectionIndex] = useState(0);
   const sections = useRef<Section[]>([
-    { name: 'Home', ref: null },
-    { name: 'Skills', ref: null },
-    { name: 'Explore', ref: null },
+    { id: 'Home', ref: null },
+    { id: 'Skills', ref: null },
+    { id: 'Explore', ref: null },
   ]);
+  const currentSectionId = useVisibleSection(sections.current.map(section => section.id));
 
   useEffect(() => {
-    const sectionName = window.location.hash.slice(1);
-    const section = sections.current.find(section => section.name === sectionName);
+    if (currentSectionId === undefined) return;
+    const index = sections.current.findIndex(section => section.id === currentSectionId);
+    setSectionIndex(index);
+    window.history.replaceState(null, '', `#${currentSectionId}`);
+  }, [currentSectionId]);
+
+  useEffect(() => {
+    const sectionId = window.location.hash.slice(1);
+    const section = sections.current.find(section => section.id === sectionId);
 
     if (section) {
       section.ref?.scrollIntoView();
     }
-
-    const replaceFragmentObserver = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          const index = sections.current.findIndex(section => section.name === entry.target.id);
-          setSectionIndex(index);
-          window.history.replaceState(null, '', `#${entry.target.id}`);
-        }
-      }
-    }, { root: null, rootMargin: '0px', threshold: 0.25 });
 
     const updateThemeColorObserver = new IntersectionObserver((entries) => {
       for (const entry of entries) {
@@ -52,7 +51,6 @@ function App() {
 
     for (const section of sections.current) {
       if (section.ref) {
-        replaceFragmentObserver.observe(section.ref);
         updateThemeColorObserver.observe(section.ref);
       }
     }
@@ -78,12 +76,12 @@ function App() {
     <ThemeProvider theme={theme}>
       <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', position: 'relative', alignItems: 'center' }}>
         {sections.current.map((section, index) => {
-          if (section.name === 'Home') {
-            return <Home key={section.name} id={section.name} ref={(ref) => sections.current[index].ref = ref} />
-          } else if (section.name === 'Skills') {
-            return <Skills key={section.name} id={section.name} ref={(ref) => sections.current[index].ref = ref} />
-          } else if (section.name === 'Explore') {
-            return <Explore key={section.name} id={section.name} ref={(ref) => sections.current[index].ref = ref} />
+          if (section.id === 'Home') {
+            return <Home key={section.id} id={section.id} ref={(ref) => sections.current[index].ref = ref} />
+          } else if (section.id === 'Skills') {
+            return <Skills key={section.id} id={section.id} ref={(ref) => sections.current[index].ref = ref} />
+          } else if (section.id === 'Explore') {
+            return <Explore key={section.id} id={section.id} ref={(ref) => sections.current[index].ref = ref} />
           } else {
             return (<div>404 Not Found</div>);
           }
@@ -123,7 +121,7 @@ function App() {
             },
           }}>
             {sections.current.map((section, index) => (
-              <Tab key={section.name} label={section.name} onClick={() => handleClick(section, index)} />
+              <Tab key={section.id} label={section.id} onClick={() => handleClick(section, index)} />
             ))}
           </Tabs>
         </Paper>
