@@ -1,5 +1,5 @@
 import { Call, Mail } from '@mui/icons-material';
-import { Box, Button, useTheme } from '@mui/material';
+import { Box, Button, Dialog, useTheme } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 
 interface Props {
@@ -10,6 +10,7 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   const theme = useTheme();
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
   const [orientation, setOrientation] = useState<'landscape' | 'portrait'>(window.innerWidth > window.innerHeight ? 'landscape' : 'portrait');
+  const [open, setOpen] = useState(false);
   const buttonStyle = {
     width: '300px',
     textTransform: 'none',
@@ -41,6 +42,14 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 
   }, [orientation]);
 
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Box id={props.id} ref={ref} sx={{
       backgroundColor: `${theme.palette.primary.main}`,
@@ -60,13 +69,20 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         flexDirection: 'column',
         alignItems: 'center',
       }}>
-        <img src='/images/me_min.jpg' alt='me' style={{
+        <img src='/images/me_min.jpg' alt='me' onClick={handleOpen} style={{
           width: '128px',
           height: '128px',
           objectFit: 'cover',
           border: '3px solid white',
           borderRadius: '50%',
+          cursor: 'pointer',
         }} />
+        <Dialog open={open} onClose={handleClose}>
+          <img src='/images/me_min.jpg' alt='me' onClick={handleClose} style={{
+            width: '100%',
+            objectFit: 'cover',
+          }} />
+        </Dialog>
         <Box sx={{
           color: 'white',
           fontFamily: 'Pacifico, sans-serif',
