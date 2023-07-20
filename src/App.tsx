@@ -34,7 +34,7 @@ function App() {
           window.history.replaceState(null, '', `#${entry.target.id}`);
         }
       }
-    }, { root: null, rootMargin: '0px', threshold: 0.5 });
+    }, { root: null, rootMargin: '0px', threshold: 0.25 });
 
     const updateThemeColorObserver = new IntersectionObserver((entries) => {
       for (const entry of entries) {
