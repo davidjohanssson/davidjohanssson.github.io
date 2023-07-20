@@ -60,7 +60,7 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         flexDirection: 'column',
         alignItems: 'center',
       }}>
-        <img src='/images/me.jpg' alt='me' style={{
+        <img src='/images/me_min.jpg' alt='me' style={{
           width: '128px',
           height: '128px',
           objectFit: 'cover',
