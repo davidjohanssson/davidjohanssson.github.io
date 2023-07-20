@@ -8,19 +8,40 @@ interface Props {
 
 const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   const theme = useTheme();
-  const [dvh, setDvh] = useState(window.innerHeight);
+  const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
+  const [orientation, setOrientation] = useState<'landscape' | 'portrait'>(window.innerWidth > window.innerHeight ? 'landscape' : 'portrait');
 
   useEffect(() => {
-    setDvh(window.innerHeight);
-  }, []);
+    const handleResize = () => {
+      if (window.innerHeight > window.innerWidth) {
+        if (orientation === 'landscape') {
+          setViewportHeight(window.innerHeight);
+        }
+        setOrientation('portrait');
+      } else {
+        if (orientation === 'portrait') {
+          setViewportHeight(window.innerHeight);
+        }
+        setOrientation('landscape');
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      // Remove event listener on cleanup
+      window.removeEventListener('resize', handleResize);
+    };
+
+  }, [orientation]);
 
   return (
     <Box id={props.id} ref={ref} sx={{
       backgroundColor: `${theme.palette.primary.main}`,
       width: '100%',
       height: {
-        xs: `calc(${dvh}px - 48px)`,
-        sm: `${dvh}px`,
+        xs: `calc(${viewportHeight}px - 48px)`,
+        sm: `${viewportHeight}px`,
       },
     }}>
 
