@@ -58,20 +58,17 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         xs: `calc(${viewportHeight}px - 48px)`,
         sm: `${viewportHeight}px`,
       },
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      rowGap: '32px',
     }}>
       <Box sx={{
+        height: `calc(${viewportHeight}px - 48px)`,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        justifyContent: 'center',
       }}>
         <img src='/images/me_min.jpg' alt='me' onClick={handleOpen} style={{
-          width: '128px',
-          height: '128px',
+          width: `calc((${viewportHeight}px - 48px) * 0.3)`,
+          height: `calc((${viewportHeight}px - 48px) * 0.3)`,
           objectFit: 'cover',
           border: '3px solid white',
           borderRadius: '50%',
@@ -87,6 +84,7 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
           color: 'white',
           fontFamily: 'Pacifico, sans-serif',
           fontSize: '32px',
+          marginTop: '4px',
         }}>
           David Johansson
         </Box>
@@ -96,14 +94,12 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         }}>
           Web Developer
         </Box>
-      </Box>
-      <Box sx={{ display: 'flex', flexDirection: 'column', rowGap: '16px' }}>
-        <Button href="tel:+46793344591" variant='contained' sx={buttonStyle}>
+        <Button href="tel:+46793344591" variant='contained' sx={buttonStyle} style={{ marginTop: '32px' }}>
           <Call />
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>+46 79 33 44 591</Box>
           <Box></Box>
         </Button>
-        <Button href="mailto:david.n.johansson@live.com" variant='contained' sx={buttonStyle}>
+        <Button href="mailto:david.n.johansson@live.com" variant='contained' sx={buttonStyle} style={{ marginTop: '16px' }}>
           <Mail />
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>david.n.johansson@live.com</Box>
           <Box></Box>
