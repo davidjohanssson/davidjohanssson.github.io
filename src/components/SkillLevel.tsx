@@ -1,7 +1,6 @@
 import { Check } from '@mui/icons-material';
 import { Box, SxProps, Theme, Tooltip } from '@mui/material';
-
-export type Level = 1 | 2 | 3 | 4;
+import { Level } from './Skill';
 
 interface Props {
   level: Level;

@@ -17,7 +17,7 @@ const Skills = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
     }}>
       <SkillType name='Programming languages'>
         <Skill name='C#' logoSrc='/images/logos/csharp.png' yearsExperience={5} level={4} />
-        <Skill name='Dart' logoSrc='/images/logos/dart.png' yearsExperience={1} level={1} />
+        <Skill name='Dart' logoSrc='/images/logos/dart.png' yearsExperience={1} level={2} />
       </SkillType>
       <SkillType name='Frameworks'>
         <Skill name='Angular' logoSrc='/images/logos/angular.png' yearsExperience={5} level={4} />
