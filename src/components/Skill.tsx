@@ -1,10 +1,11 @@
 import { Avatar, Box, Chip } from '@mui/material';
+import SkillLevel, { Level } from './SkillLevel';
 
 interface Props {
   name: string;
   logoSrc: string;
   yearsExperience: number;
-  level: 'Beginner' | 'Intermediate' | 'Advanced' | 'Professional';
+  level: Level;
 }
 
 const Skill: React.FC<Props> = ({ name, logoSrc, yearsExperience, level }) => {
@@ -33,9 +34,10 @@ const Skill: React.FC<Props> = ({ name, logoSrc, yearsExperience, level }) => {
         fontSize: {
           xs: '10px',
           sm: '13px',
-        }
+        },
+        marginBottom: '16px',
       }} />
-
+      <SkillLevel level={level} />
     </Box>
   );
 };
