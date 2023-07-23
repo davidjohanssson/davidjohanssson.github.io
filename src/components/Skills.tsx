@@ -1,6 +1,8 @@
 import { Box, Divider, useMediaQuery, useTheme } from '@mui/material';
 import React from 'react';
 import SkillLegend from './SkillLegend';
+import SkillType from './SkillType';
+import Skill from './Skill';
 
 interface Props {
   id: string;
@@ -16,7 +18,17 @@ const Skills = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
       width: '100%',
       maxWidth: '960px',
     }}>
-      <Box sx={{
+      <SkillType name='Programming languages'>
+        <Skill name='C#' logoSrc='/images/logos/csharp.png' yearsExperience={5} level='Professional' />
+        <Skill name='Dart' logoSrc='/images/logos/dart.png' yearsExperience={1} level='Intermediate' />
+      </SkillType>
+      <Divider />
+      <SkillType name='Frameworks'>
+        <Skill name='Angular' logoSrc='/images/logos/angular.png' yearsExperience={5} level='Professional' />
+        <Skill name='ASP.NET Core' logoSrc='/images/logos/aspnetcore.png' yearsExperience={5} level='Professional' />
+      </SkillType>
+
+      {/* <Box sx={{
         display: 'flex',
         flexDirection: {
           xs: 'column-reverse',
@@ -43,7 +55,7 @@ const Skills = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 
       }}>
         <Box>Programming languages</Box>
-      </Box>
+      </Box> */}
     </Box>
   )
 });
