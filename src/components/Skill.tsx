@@ -1,4 +1,4 @@
-import { Avatar, Box, Chip, Paper } from '@mui/material';
+import { Avatar, Box, Chip } from '@mui/material';
 
 interface Props {
   name: string;
@@ -9,12 +9,14 @@ interface Props {
 
 const Skill: React.FC<Props> = ({ name, logoSrc, yearsExperience, level }) => {
   return (
-    <Paper elevation={2} sx={{
+    <Box sx={{
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       boxSizing: 'border-box',
       padding: '16px',
+      border: '1px solid rgba(0, 0, 0, 0.12)',
+      borderRadius: '4px',
     }}>
       <Box sx={{
         fontSize: '16px',
@@ -34,7 +36,7 @@ const Skill: React.FC<Props> = ({ name, logoSrc, yearsExperience, level }) => {
         }
       }} />
 
-    </Paper>
+    </Box>
   );
 };
 
