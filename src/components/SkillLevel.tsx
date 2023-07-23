@@ -1,5 +1,5 @@
 import { Check } from '@mui/icons-material';
-import { Box, SxProps, Theme } from '@mui/material';
+import { Box, SxProps, Theme, Tooltip } from '@mui/material';
 
 export type Level = 1 | 2 | 3 | 4;
 
@@ -15,49 +15,56 @@ function getBoxColor(boxLevel: Level, level: Level) {
   } else if (boxLevel === 3 && level >= 3) {
     return '#E67E22';
   } else if (boxLevel === 4 && level >= 4) {
-    return 'crimson';
+    return 'black';
   } else {
     return 'white';
   }
 }
 
 const SkillLevel: React.FC<Props> = ({ level }) => {
-
   const boxStyle = (boxLevel: Level): SxProps<Theme> => ({
     backgroundColor: getBoxColor(boxLevel, level),
     color: 'white',
-    width: '16px',
+    width: '18px',
+    height: '18px',
     boxSizing: 'border-box',
     border: '1px solid rgba(0, 0, 0, 0.12)',
     borderRadius: '4px',
   });
 
   const checkStyle: SxProps<Theme> = {
-    fontSize: '17px',
+    fontSize: '19px',
     marginLeft: '-2px',
-    marginTop: '-1px',
+    marginTop: '-2px',
   };
 
   return (
     <Box sx={{
       width: '75%',
-      height: '16px',
       display: 'flex',
       justifyContent: 'center',
       columnGap: '8px',
     }}>
-      <Box sx={boxStyle(1)}>
-        <Check sx={checkStyle} />
-      </Box>
-      <Box sx={boxStyle(2)}>
-        <Check sx={checkStyle} />
-      </Box>
-      <Box sx={boxStyle(3)}>
-        <Check sx={checkStyle} />
-      </Box>
-      <Box sx={boxStyle(4)}>
-        <Check sx={checkStyle} />
-      </Box>
+      <Tooltip title='Beginner' arrow disableFocusListener>
+        <Box sx={boxStyle(1)}>
+          <Check sx={checkStyle} />
+        </Box>
+      </Tooltip>
+      <Tooltip title='Intermediate' arrow>
+        <Box sx={boxStyle(2)}>
+          <Check sx={checkStyle} />
+        </Box>
+      </Tooltip>
+      <Tooltip title='Advanced' arrow>
+        <Box sx={boxStyle(3)}>
+          <Check sx={checkStyle} />
+        </Box>
+      </Tooltip>
+      <Tooltip title='Professional' arrow>
+        <Box sx={boxStyle(4)}>
+          <Check sx={checkStyle} />
+        </Box>
+      </Tooltip>
     </Box>
   )
 };
