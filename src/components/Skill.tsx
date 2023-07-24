@@ -1,6 +1,6 @@
 import { Avatar, Box, Chip, SxProps, Theme } from '@mui/material';
 
-export type Level = 1 | 2 | 3 | 4;
+export type Level = 1 | 2 | 3 | 4 | 5;
 
 interface Props {
   name: string;
@@ -17,6 +17,8 @@ function getChipAvatarColor(level: Level) {
   } else if (level === 3) {
     return '#E67E22';
   } else if (level === 4) {
+    return '#E64922';
+  } else if (level === 5) {
     return '#2C2C2C';
   }
 }
@@ -30,6 +32,8 @@ function getChipTitle(level: Level) {
     return 'Advanced';
   } else if (level === 4) {
     return 'Professional';
+  } else if (level === 5) {
+    return 'Expert';
   }
 }
 
