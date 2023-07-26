@@ -1,4 +1,4 @@
-import { Avatar, Box, Chip, SxProps, Theme } from '@mui/material';
+import { Avatar, Box, Chip, Paper, SxProps, Theme } from '@mui/material';
 
 export type Level = 1 | 2 | 3 | 4 | 5;
 
@@ -47,14 +47,13 @@ const Skill: React.FC<Props> = ({ name, logoSrc, yearsExperience, level }) => {
   };
 
   return (
-    <Box sx={{
+    <Paper sx={{
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       boxSizing: 'border-box',
       padding: '16px',
-      border: '1px solid rgba(0, 0, 0, 0.12)',
-      borderRadius: '4px',
+      borderRadius: '0px',
     }}>
       <Box sx={{
         fontSize: '16px',
@@ -81,7 +80,7 @@ const Skill: React.FC<Props> = ({ name, logoSrc, yearsExperience, level }) => {
         <Avatar>
           {yearsExperience}
         </Avatar>} label={(yearsExperience === 1 ? 'year' : 'years') + ' experience'} sx={chipStyle} />
-    </Box>
+    </Paper>
   );
 };
 
