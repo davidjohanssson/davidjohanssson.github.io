@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, useTheme } from '@mui/material';
 import React from 'react';
 import SkillType from './SkillType';
 import Skill from './Skill';
@@ -8,12 +8,29 @@ interface Props {
 }
 
 const Skills = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+  const theme = useTheme();
 
   return (
     <Box id={props.id} ref={ref} sx={{
       backgroundColor: 'white',
       width: '100%',
-      maxWidth: '960px',
+      boxSizing: 'border-box',
+      paddingLeft: {
+        xs: '0%',
+        sm: '0%',
+        md: '5%',
+        lg: '15%',
+        xl: '20%',
+      },
+      paddingRight: {
+        xs: '0%',
+        sm: '0%',
+        md: '5%',
+        lg: '15%',
+        xl: '20%',
+      },
+      borderTop: `1px solid ${theme.palette.primary.dark}`,
+      borderBottom: `1px solid ${theme.palette.primary.dark}`,
     }}>
       <SkillType name='Programming languages'>
         <Skill name='C#' logoSrc='/images/logos/csharp.png' yearsExperience={5} level={4} />
@@ -32,7 +49,7 @@ const Skills = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         <Skill name='Microsoft SQL Server' logoSrc='/images/logos/sqlserver.png' yearsExperience={3} level={3} />
         <Skill name='PostgreSQL' logoSrc='/images/logos/postgresql.png' yearsExperience={3} level={3} />
       </SkillType>
-      <SkillType name='Tools, libraries, other'>
+      <SkillType name='Tools & libraries'>
         <Skill name='EF Core' logoSrc='/images/logos/efcore.png' yearsExperience={3} level={4} />
         <Skill name='GraphQL' logoSrc='/images/logos/graphql.png' yearsExperience={2} level={3} />
         <Skill name='Material UI' logoSrc='/images/logos/materialui.png' yearsExperience={3} level={3} />
