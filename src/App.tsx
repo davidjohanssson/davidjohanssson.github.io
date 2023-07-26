@@ -40,10 +40,10 @@ function App() {
         if (entry.isIntersecting) {
           let color = window.getComputedStyle(entry.target).backgroundColor;
 
-          if (color === 'rgba(0, 0, 0, 0)') {
-            color = 'rgb(255, 255, 255)';
+          if (color === 'rgba(0, 0, 0, 0)' || color === 'rgb(255, 255, 255)') {
+            color = '#FEFEFE';
           }
-
+          
           document.querySelector('meta[name="theme-color"]')?.setAttribute('content', color);
         }
       }
