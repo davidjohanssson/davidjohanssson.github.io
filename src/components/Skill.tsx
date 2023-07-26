@@ -57,7 +57,6 @@ const Skill: React.FC<Props> = ({ name, logoSrc, yearsExperience, level }) => {
     }}>
       <Box sx={{
         fontSize: '16px',
-        fontWeight: 'bold',
         marginBottom: '16px',
       }}>{name}</Box>
       <Box component='img' src={logoSrc} alt='logo' sx={{
