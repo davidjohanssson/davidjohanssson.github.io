@@ -41,7 +41,7 @@ function App() {
           let color = window.getComputedStyle(entry.target).backgroundColor;
 
           if (color === 'rgba(0, 0, 0, 0)' || color === 'rgb(255, 255, 255)') {
-            color = '#FEFEFE';
+            color = '#F5F5F5';
           }
           
           document.querySelector('meta[name="theme-color"]')?.setAttribute('content', color);
