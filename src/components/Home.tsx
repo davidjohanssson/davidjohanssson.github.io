@@ -58,6 +58,7 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         xs: `calc(${viewportHeight}px - 48px)`,
         sm: `${viewportHeight}px`,
       },
+      borderBottom: `1px solid ${theme.palette.primary.dark}`,
     }}>
       <Box sx={{
         height: `calc(${viewportHeight}px - 48px)`,
