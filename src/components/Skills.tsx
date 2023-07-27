@@ -1,4 +1,4 @@
-import { Box, useTheme } from '@mui/material';
+import { Box } from '@mui/material';
 import React from 'react';
 import SkillType from './SkillType';
 import Skill from './Skill';
@@ -8,7 +8,6 @@ interface Props {
 }
 
 const Skills = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
-  const theme = useTheme();
 
   return (
     <Box id={props.id} ref={ref} sx={{
@@ -29,13 +28,11 @@ const Skills = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         lg: '15%',
         xl: '20%',
       },
-      borderTop: `1px solid ${theme.palette.primary.dark}`,
-      borderBottom: `1px solid ${theme.palette.primary.dark}`,
     }}>
       <SkillType name='Programming languages'>
         <Skill name='C#' logoSrc='/images/logos/csharp.png' yearsExperience={5} level={4} />
         <Skill name='Dart' logoSrc='/images/logos/dart.png' yearsExperience={1} level={2} />
-        <Skill name='Java' logoSrc='/images/logos/java.png' yearsExperience={2} level={3} />
+        <Skill name='Java' logoSrc='/images/logos/java.png' yearsExperience={2} level={2} />
         <Skill name='JavaScript' logoSrc='/images/logos/javascript.png' yearsExperience={5} level={4} />
         <Skill name='TypeScript' logoSrc='/images/logos/typescript.png' yearsExperience={5} level={4} />
       </SkillType>
