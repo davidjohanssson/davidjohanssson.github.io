@@ -16,17 +16,29 @@ const Skills = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
       boxSizing: 'border-box',
       paddingLeft: {
         xs: '0%',
-        sm: '0%',
         md: '5%',
         lg: '15%',
         xl: '20%',
       },
       paddingRight: {
         xs: '0%',
-        sm: '0%',
         md: '5%',
         lg: '15%',
         xl: '20%',
+      },
+      paddingTop: {
+        xs: '0px',
+        md: '32px',
+      },
+      paddingBottom: {
+        xs: '0px',
+        md: '32px',
+      },
+      display: 'flex',
+      flexDirection: 'column',
+      rowGap: {
+        xs: '0px',
+        md: '32px',
       },
     }}>
       <SkillType name='Programming languages'>
