@@ -41,6 +41,20 @@ const Skills = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         md: '32px',
       },
     }}>
+      <Box sx={{
+        backgroundColor: {
+          xs: '#F5F5F5',
+          md: 'unset',
+        },
+        textAlign: 'center',
+        boxSizing: 'border-box',
+        padding: {
+          xs: '32px 0px 16px 0px',
+          md: '16px 0px 16px 0px',
+        },
+        fontSize: '32px',
+        fontWeight: '500',
+      }}>Skills</Box>
       <SkillType name='Programming languages'>
         <Skill name='C#' logoSrc='/images/logos/csharp.png' yearsExperience={5} level={4} />
         <Skill name='Dart' logoSrc='/images/logos/dart.png' yearsExperience={1} level={2} />
@@ -56,10 +70,10 @@ const Skills = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         <Skill name='React' logoSrc='/images/logos/react.png' yearsExperience={1} level={3} />
       </SkillType>
       <SkillType name='Databases'>
-        <Skill name='Microsoft SQL Server' logoSrc='/images/logos/sqlserver.png' yearsExperience={3} level={3} />
+        <Skill name='MS SQL Server' logoSrc='/images/logos/sqlserver.png' yearsExperience={3} level={3} />
         <Skill name='PostgreSQL' logoSrc='/images/logos/postgresql.png' yearsExperience={3} level={3} />
       </SkillType>
-      <SkillType name='Tools & libraries'>
+      <SkillType name='Other'>
         <Skill name='EF Core' logoSrc='/images/logos/efcore.png' yearsExperience={3} level={4} />
         <Skill name='GraphQL' logoSrc='/images/logos/graphql.png' yearsExperience={2} level={3} />
         <Skill name='Material UI' logoSrc='/images/logos/materialui.png' yearsExperience={3} level={3} />

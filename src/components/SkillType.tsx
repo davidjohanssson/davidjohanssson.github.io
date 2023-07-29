@@ -12,13 +12,12 @@ const SkillType: React.FC<Props> = ({ name, children }) => {
       boxSizing: 'border-box',
       padding: '16px',
       backgroundColor: '#F5F5F5',
-      borderRadius: '8px',
     }}>
       <Box sx={{
         fontSize: '20px',
         marginBottom: '16px',
       }}>
-        {name}
+        &bull;&nbsp;{name}
       </Box>
       <Box sx={{
         display: 'grid',
