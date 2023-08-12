@@ -77,9 +77,9 @@ const Skills = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         <Skill name='EF Core' logoSrc='/images/logos/efcore.png' yearsExperience={3} level={4} />
         <Skill name='GraphQL' logoSrc='/images/logos/graphql.png' yearsExperience={2} level={3} />
         <Skill name='Material UI' logoSrc='/images/logos/materialui.png' yearsExperience={3} level={3} />
+        <Skill name='moment.js' logoSrc='/images/logos/momentjs.png' yearsExperience={2} level={2} />
         <Skill name='REST' logoSrc='/images/logos/rest.png' yearsExperience={4} level={4} />
         <Skill name='TypeORM' logoSrc='/images/logos/typeorm.png' yearsExperience={2} level={3} />
-        <Skill name='moment.js' logoSrc='/images/logos/momentjs.png' yearsExperience={2} level={2} />
       </SkillType>
     </Box>
   )

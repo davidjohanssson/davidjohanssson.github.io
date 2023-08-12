@@ -43,7 +43,7 @@ function App() {
           if (color === 'rgba(0, 0, 0, 0)' || color === 'rgb(255, 255, 255)') {
             color = '#F5F5F5';
           }
-          
+
           document.querySelector('meta[name="theme-color"]')?.setAttribute('content', color);
         }
       }
@@ -75,17 +75,22 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', position: 'relative', alignItems: 'center' }}>
-        {sections.current.map((section, index) => {
-          if (section.id === 'Contact') {
-            return <Contact key={section.id} id={section.id} ref={(ref) => sections.current[index].ref = ref} />
-          } else if (section.id === 'Skills') {
-            return <Skills key={section.id} id={section.id} ref={(ref) => sections.current[index].ref = ref} />
-          } else if (section.id === 'Explore') {
-            return <Explore key={section.id} id={section.id} ref={(ref) => sections.current[index].ref = ref} />
-          } else {
-            return (<div>404 Not Found</div>);
-          }
-        })}
+        <Box sx={{
+          width: '100%',
+          marginBottom: '48px',
+         }}>
+          {sections.current.map((section, index) => {
+            if (section.id === 'Contact') {
+              return <Contact key={section.id} id={section.id} ref={(ref) => sections.current[index].ref = ref} />
+            } else if (section.id === 'Skills') {
+              return <Skills key={section.id} id={section.id} ref={(ref) => sections.current[index].ref = ref} />
+            } else if (section.id === 'Explore') {
+              return <Explore key={section.id} id={section.id} ref={(ref) => sections.current[index].ref = ref} />
+            } else {
+              return (<div>404 Not Found</div>);
+            }
+          })}
+        </Box>
         <Paper elevation={6} sx={{
           backgroundColor: theme.palette.primary.main,
           color: 'white',
