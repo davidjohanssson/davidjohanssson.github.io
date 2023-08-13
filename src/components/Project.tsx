@@ -59,10 +59,10 @@ const Project: React.FC<Props> = ({ title, shortDescription, framework, imageSrc
         padding: '16px',
         boxSizing: 'border-box',
       }}>
-        <Button variant='contained' startIcon={<GitHub />} href={repositoryUrl} target='_blank' sx={{ width: '114px' }}>
+        <Button variant='contained' startIcon={<GitHub />} href={repositoryUrl} target='_blank' color='secondary'>
           Source
         </Button>
-        <Button variant='contained' startIcon={<OpenInNew />} href={appUrl} target='_blank' sx={{ width: '114px' }}>
+        <Button variant='contained' startIcon={<OpenInNew />} href={appUrl} target='_blank'>
           Run
         </Button>
       </Box>
