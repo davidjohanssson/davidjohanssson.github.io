@@ -47,13 +47,13 @@ const Skill: React.FC<Props> = ({ name, logoSrc, yearsExperience, level }) => {
   };
 
   return (
-    <Paper sx={{
+    <Paper elevation={4} sx={{
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       boxSizing: 'border-box',
       padding: '16px',
-      borderRadius: '0px',
+      borderRadius: '4px',
     }}>
       <Box sx={{
         fontSize: '16px',

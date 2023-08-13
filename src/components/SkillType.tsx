@@ -12,6 +12,7 @@ const SkillType: React.FC<Props> = ({ name, children }) => {
       boxSizing: 'border-box',
       padding: '16px',
       backgroundColor: '#F5F5F5',
+      borderRadius: '4px',
     }}>
       <Box sx={{
         fontSize: '20px',

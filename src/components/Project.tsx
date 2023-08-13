@@ -30,7 +30,7 @@ const Project: React.FC<Props> = ({ title, shortDescription, framework, imageSrc
     <Paper elevation={6} sx={{
       display: 'flex',
       flexDirection: 'column',
-      borderRadius: '0px',
+      borderRadius: '4px',
     }}>
       <Box sx={{
         height: '80px',
