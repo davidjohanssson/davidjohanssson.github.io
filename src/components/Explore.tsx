@@ -60,8 +60,20 @@ const Explore = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         padding: '16px',
         gap: '16px',
       }}>
-        <Project />
-        <Project />
+        <Project 
+          title='Donec venenatis'
+          shortDescription='Praesent blandit vulputate tortor vel ultrices'
+          framework='Angular'
+          imageSrc='/images/code.jpg'
+          description='Pellentesque nec tortor vel tortor hendrerit porttitor. Donec porttitor sollicitudin tempor. Suspendisse potenti. Aenean a quam id erat pharetra eleifend. Praesent dignissim sollicitudin enim volutpat dapibus. Suspendisse sagittis erat at ex accumsan feugiat. Nam et justo nisi. Etiam maximus hendrerit lacinia.'
+          url='test' />
+        <Project
+          title='Sed pellentesque'
+          shortDescription='Proin dolor nisi, malesuada et viverra eget.'
+          framework='React'
+          imageSrc='/images/code.jpg'
+          description='Donec non nisi a purus fringilla luctus vitae lobortis tellus. Nam quis tellus pharetra, ultrices quam id, vulputate quam. Pellentesque sit amet tortor felis. Pellentesque ornare mollis lacus, et placerat nibh imperdiet vel. Curabitur viverra justo sit amet justo semper blandit.'
+          url='test' />
       </Box>
     </Box>
   )
