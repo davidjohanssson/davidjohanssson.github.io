@@ -18,7 +18,7 @@ const SkillType: React.FC<Props> = ({ name, children }) => {
         fontSize: '20px',
         marginBottom: '16px',
       }}>
-        &bull;&nbsp;{name}
+        {name}
       </Box>
       <Box sx={{
         display: 'grid',
