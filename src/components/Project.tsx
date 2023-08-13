@@ -1,4 +1,5 @@
-import { Box, Paper } from '@mui/material';
+import { GitHub, OpenInNew } from '@mui/icons-material';
+import { Box, Button, Paper } from '@mui/material';
 
 export type Framework = 'Angular' | 'Blazor' | 'React';
 
@@ -7,11 +8,11 @@ interface Props {
   shortDescription: string;
   framework: Framework;
   imageSrc: string;
-  description: string;
-  url: string;
+  repositoryUrl: string;
+  appUrl: string;
 }
 
-const Project: React.FC<Props> = ({ title, shortDescription, framework, imageSrc, description, url }) => {
+const Project: React.FC<Props> = ({ title, shortDescription, framework, imageSrc, repositoryUrl, appUrl }) => {
 
   const getFrameworkImage = (framework: Framework) => {
     const path = '/images/logos/';
@@ -52,7 +53,19 @@ const Project: React.FC<Props> = ({ title, shortDescription, framework, imageSrc
         </Box>
       </Box>
       <img src={imageSrc} alt='project' style={{ height: '192px', objectFit: 'cover' }} />
-
+      <Box sx={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        padding: '16px',
+        boxSizing: 'border-box',
+      }}>
+        <Button variant='contained' startIcon={<GitHub />} href={repositoryUrl} target='_blank' sx={{ width: '114px' }}>
+          Source
+        </Button>
+        <Button variant='contained' startIcon={<OpenInNew />} href={appUrl} target='_blank' sx={{ width: '114px' }}>
+          Run
+        </Button>
+      </Box>
     </Paper>
   );
 };
