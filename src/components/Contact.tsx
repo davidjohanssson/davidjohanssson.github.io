@@ -6,7 +6,7 @@ interface Props {
   id: string;
 }
 
-const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
+const Contact = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   const theme = useTheme();
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
   const [orientation, setOrientation] = useState<'landscape' | 'portrait'>(window.innerWidth > window.innerHeight ? 'landscape' : 'portrait');
@@ -110,4 +110,4 @@ const Home = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
   )
 });
 
-export default Home;
+export default Contact;

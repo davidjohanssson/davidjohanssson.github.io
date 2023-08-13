@@ -1,20 +1,20 @@
 import { Box, Paper, Tab, Tabs, ThemeProvider } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
-import Home from './components/Home';
+import Contact from './components/Contact';
 import Skills from './components/Skills';
 import Explore from './components/Explore';
 import { theme } from './theme';
 import { useVisibleSection } from './hooks/useVisibleSection';
 
 interface Section {
-  id: 'Home' | 'Skills' | 'Explore';
+  id: 'Contact' | 'Skills' | 'Explore';
   ref: HTMLDivElement | null;
 }
 
 function App() {
   const [sectionIndex, setSectionIndex] = useState(0);
   const sections = useRef<Section[]>([
-    { id: 'Home', ref: null },
+    { id: 'Contact', ref: null },
     { id: 'Skills', ref: null },
     { id: 'Explore', ref: null },
   ]);
@@ -43,7 +43,7 @@ function App() {
           if (color === 'rgba(0, 0, 0, 0)' || color === 'rgb(255, 255, 255)') {
             color = '#F5F5F5';
           }
-          
+
           document.querySelector('meta[name="theme-color"]')?.setAttribute('content', color);
         }
       }
@@ -75,17 +75,22 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', position: 'relative', alignItems: 'center' }}>
-        {sections.current.map((section, index) => {
-          if (section.id === 'Home') {
-            return <Home key={section.id} id={section.id} ref={(ref) => sections.current[index].ref = ref} />
-          } else if (section.id === 'Skills') {
-            return <Skills key={section.id} id={section.id} ref={(ref) => sections.current[index].ref = ref} />
-          } else if (section.id === 'Explore') {
-            return <Explore key={section.id} id={section.id} ref={(ref) => sections.current[index].ref = ref} />
-          } else {
-            return (<div>404 Not Found</div>);
-          }
-        })}
+        <Box sx={{
+          width: '100%',
+          marginBottom: '48px',
+         }}>
+          {sections.current.map((section, index) => {
+            if (section.id === 'Contact') {
+              return <Contact key={section.id} id={section.id} ref={(ref) => sections.current[index].ref = ref} />
+            } else if (section.id === 'Skills') {
+              return <Skills key={section.id} id={section.id} ref={(ref) => sections.current[index].ref = ref} />
+            } else if (section.id === 'Explore') {
+              return <Explore key={section.id} id={section.id} ref={(ref) => sections.current[index].ref = ref} />
+            } else {
+              return (<div>404 Not Found</div>);
+            }
+          })}
+        </Box>
         <Paper elevation={6} sx={{
           backgroundColor: theme.palette.primary.main,
           color: 'white',
