@@ -59,12 +59,12 @@ const Explore = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         gap: '32px',
       }}>
         <Project
-          title='Donec venenatis'
-          shortDescription='Praesent blandit vulputate tortor vel ultrices'
+          title='Color Palette Generator'
+          shortDescription='A simple tool for creating color palettes.'
           framework='Angular'
-          imageSrc='/images/code.jpg'
-          repositoryUrl='https://google.se'
-          appUrl='https://google.se' />
+          imageSrc='/images/color-palette-generator.png'
+          repositoryUrl='https://github.com/davidjohanssson/material-color-palette-generator'
+          appUrl='https://davidjohanssson.github.io/material-color-palette-generator/' />
         <Project
           title='Sed pellentesque'
           shortDescription='Proin dolor nisi, malesuada et viverra eget.'
