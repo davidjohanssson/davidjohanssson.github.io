@@ -15,7 +15,7 @@ function App() {
   const [sectionIndex, setSectionIndex] = useState(0);
   const sections = useRef<Section[]>([
     { id: 'Contact', ref: null },
-    { id: 'Skills', ref: null },
+    // { id: 'Skills', ref: null },
     { id: 'Explore', ref: null },
   ]);
   const currentSectionId = useVisibleSection(sections.current.map(section => section.id));
