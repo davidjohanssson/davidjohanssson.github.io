@@ -52,8 +52,8 @@ const Explore = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
       <Box sx={{
         display: 'grid',
         gridTemplateColumns: {
-          xs: '1fr',
-          md: '1fr 1fr',
+          xs: '100%',
+          md: '50% 50%',
         },
         padding: '16px',
         gap: '32px',
