@@ -63,14 +63,14 @@ const Explore = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
           shortDescription='A simple tool for creating color palettes.'
           framework='Angular'
           imageSrc='/images/color-palette-generator.png'
-          repositoryUrl='https://github.com/davidjohanssson/material-color-palette-generator'
+          repositoryUrl='https://davidjohansson.app/material-color-palette-generator/'
           appUrl='https://davidjohanssson.github.io/material-color-palette-generator/' />
         <Project
           title='Resurskarta'
           shortDescription='Fordon på en karta som uppdateras i realtid.'
           framework='Angular'
           imageSrc='/images/resurskarta.png'
-          repositoryUrl='https://github.com/davidjohanssson/resurskarta'
+          repositoryUrl='https://davidjohansson.app/resurskarta/'
           appUrl='https://davidjohanssson.github.io/resurskarta/'/>
       </Box>
     </Box>
