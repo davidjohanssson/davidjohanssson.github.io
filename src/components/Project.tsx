@@ -14,17 +14,17 @@ interface Props {
 
 const Project: React.FC<Props> = ({ title, shortDescription, framework, imageSrc, repositoryUrl, appUrl }) => {
 
-  const getFrameworkImage = (framework: Framework) => {
-    const path = '/images/logos/';
-    switch (framework) {
-      case 'Angular':
-        return path + 'angular.png';
-      case 'Blazor':
-        return path + 'blazor.png';
-      case 'React':
-        return path + 'react.png';
-    }
-  };
+  // const getFrameworkImage = (framework: Framework) => {
+  //   const path = '/images/logos/';
+  //   switch (framework) {
+  //     case 'Angular':
+  //       return path + 'angular.png';
+  //     case 'Blazor':
+  //       return path + 'blazor.png';
+  //     case 'React':
+  //       return path + 'react.png';
+  //   }
+  // };
 
   return (
     <Paper elevation={6} sx={{
@@ -49,7 +49,8 @@ const Project: React.FC<Props> = ({ title, shortDescription, framework, imageSrc
           <Box sx={{ fontSize: '13px' }}>{shortDescription}</Box>
         </Box>
         <Box>
-          <img src={getFrameworkImage(framework)} alt='framework' style={{ height: '46px' }} />
+          {/* <img src={getFrameworkImage(framework)} alt='framework' style={{ height: '46px' }} /> */}
+          <div style={{ height: '46px' }}></div>
         </Box>
       </Box>
       <img src={imageSrc} alt='project' style={{ height: '192px', objectFit: 'cover' }} />
@@ -63,7 +64,7 @@ const Project: React.FC<Props> = ({ title, shortDescription, framework, imageSrc
           Source
         </Button>
         <Button variant='contained' startIcon={<OpenInNew />} href={appUrl} target='_blank'>
-          Run
+          Open
         </Button>
       </Box>
     </Paper>

@@ -1,13 +1,12 @@
 import { Box, Paper, Tab, Tabs, ThemeProvider } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 import Contact from './components/Contact';
-import Skills from './components/Skills';
 import Explore from './components/Explore';
 import { theme } from './theme';
 import { useVisibleSection } from './hooks/useVisibleSection';
 
 interface Section {
-  id: 'Contact' | 'Skills' | 'Explore';
+  id: 'Contact' | 'Explore';
   ref: HTMLDivElement | null;
 }
 
@@ -15,7 +14,6 @@ function App() {
   const [sectionIndex, setSectionIndex] = useState(0);
   const sections = useRef<Section[]>([
     { id: 'Contact', ref: null },
-    // { id: 'Skills', ref: null },
     { id: 'Explore', ref: null },
   ]);
   const currentSectionId = useVisibleSection(sections.current.map(section => section.id));
@@ -82,8 +80,6 @@ function App() {
           {sections.current.map((section, index) => {
             if (section.id === 'Contact') {
               return <Contact key={section.id} id={section.id} ref={(ref) => sections.current[index].ref = ref} />
-            } else if (section.id === 'Skills') {
-              return <Skills key={section.id} id={section.id} ref={(ref) => sections.current[index].ref = ref} />
             } else if (section.id === 'Explore') {
               return <Explore key={section.id} id={section.id} ref={(ref) => sections.current[index].ref = ref} />
             } else {
