@@ -68,6 +68,13 @@ const Explore = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
           imageSrc='/images/resurskarta.png'
           repositoryUrl='https://github.com/davidjohanssson/resurskarta/'
           appUrl='https://davidjohansson.app/resurskarta/'/>
+        <Project
+          title='Music Player'
+          shortDescription='A music player where one can listen to tracks and rank them using a drag-and-drop-able list.'
+          framework='Angular'
+          imageSrc='/images/music-player.png'
+          repositoryUrl='https://github.com/davidjohanssson/music-player/'
+          appUrl='https://davidjohansson.app/music-player/'/>
       </Box>
     </Box>
   )
