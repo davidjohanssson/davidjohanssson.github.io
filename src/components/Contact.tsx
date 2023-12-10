@@ -52,7 +52,7 @@ const Contact = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
 
   return (
     <Box id={props.id} ref={ref} sx={{
-      backgroundColor: `${theme.palette.primary.main}`,
+      background: `linear-gradient(to bottom right, ${theme.palette.primary.light}, ${theme.palette.primary.main})`,
       width: '100%',
       height: {
         xs: `calc(${viewportHeight}px - 48px)`,
