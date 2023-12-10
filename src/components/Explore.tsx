@@ -38,7 +38,8 @@ const Explore = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         textAlign: 'center',
         boxSizing: 'border-box',
         padding: {
-          xs: '32px 0px calc(32px + 16px) 0px',
+          xs: '32px 0px 16px 0px',
+          md: '32px 0px calc(32px + 16px) 0px',
         },
         fontSize: '32px',
         fontWeight: '500',
