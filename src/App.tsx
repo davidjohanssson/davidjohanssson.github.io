@@ -1,4 +1,4 @@
-import { Box, Paper, Tab, Tabs, ThemeProvider } from '@mui/material';
+import { Box, Paper, Tab, Tabs, ThemeProvider, useTheme } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 import Contact from './components/Contact';
 import Explore from './components/Explore';
@@ -11,6 +11,7 @@ interface Section {
 }
 
 function App() {
+  const t = useTheme();
   const [sectionIndex, setSectionIndex] = useState(0);
   const sections = useRef<Section[]>([
     { id: 'Contact', ref: null },
@@ -36,13 +37,13 @@ function App() {
     const updateThemeColorObserver = new IntersectionObserver((entries) => {
       for (const entry of entries) {
         if (entry.isIntersecting) {
-          let color = window.getComputedStyle(entry.target).backgroundColor;
+          let backgroundColor = t.palette.primary.light;
 
-          if (color === 'rgba(0, 0, 0, 0)' || color === 'rgb(255, 255, 255)') {
-            color = '#F5F5F5';
+          if (backgroundColor === 'rgba(0, 0, 0, 0)' || backgroundColor === 'rgb(255, 255, 255)') {
+            backgroundColor = '#F5F5F5';
           }
 
-          document.querySelector('meta[name="theme-color"]')?.setAttribute('content', color);
+          document.querySelector('meta[name="theme-color"]')?.setAttribute('content', backgroundColor);
         }
       }
     }, { root: null, rootMargin: '0px 0px -100% 0px', threshold: 0 });
@@ -52,7 +53,7 @@ function App() {
         updateThemeColorObserver.observe(section.ref);
       }
     }
-  }, []);
+  }, [t]);
 
   const handleClick = (section: Section, index: number) => {
     setSectionIndex(index);
@@ -76,7 +77,7 @@ function App() {
         <Box sx={{
           width: '100%',
           marginBottom: '48px',
-         }}>
+        }}>
           {sections.current.map((section, index) => {
             if (section.id === 'Contact') {
               return <Contact key={section.id} id={section.id} ref={(ref) => sections.current[index].ref = ref} />
