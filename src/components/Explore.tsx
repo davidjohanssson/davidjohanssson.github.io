@@ -61,21 +61,21 @@ const Explore = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
           framework='Angular'
           imageSrc='/images/color-palette-generator.png'
           repositoryUrl='https://github.com/davidjohanssson/material-color-palette-generator/'
-          appUrl='https://davidjohansson.app/material-color-palette-generator/' />
+          appUrl='https://mcpg.davidjohansson.app/' />
         <Project
           title='Resurskarta'
           shortDescription='Fordon på en karta som uppdateras i realtid.'
           framework='Angular'
           imageSrc='/images/resurskarta.png'
           repositoryUrl='https://github.com/davidjohanssson/resurskarta/'
-          appUrl='https://davidjohansson.app/resurskarta/'/>
+          appUrl='https://resurskarta.davidjohansson.app/' />
         <Project
           title='Music Player'
           shortDescription='A music player where one can listen to tracks and rank them using a drag-and-drop-able list.'
           framework='Angular'
           imageSrc='/images/music-player.png'
           repositoryUrl='https://github.com/davidjohanssson/music-player/'
-          appUrl='https://davidjohansson.app/music-player/'/>
+          appUrl='https://musicplayer.davidjohansson.app/' />
       </Box>
     </Box>
   )
